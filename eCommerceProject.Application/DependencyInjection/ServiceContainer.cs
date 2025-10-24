@@ -1,10 +1,7 @@
 ﻿using eCommerceProject.Application.Mapping;
+using eCommerceProject.Application.Services.Implementations;
+using eCommerceProject.Application.Services.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace eCommerceProject.Application.DependencyInjection
 {
@@ -13,6 +10,8 @@ namespace eCommerceProject.Application.DependencyInjection
         public static IServiceCollection AddAplicationService(this IServiceCollection services)
         {
             services.AddAutoMapper(cfg => cfg.AddProfile<MappingConfig>());
+            services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<ICategoryService, CategoryService>();
             return services;
         }
     }

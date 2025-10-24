@@ -6,5 +6,5 @@ using System.Threading.Tasks;
 
 namespace eCommerceProject.Application.DTOs.Responses
 {
-    public record ServiceResponse(bool Success = false, string Message = null!)
+    public record ServiceResponse(bool Success = false, string Message = null!);
 }

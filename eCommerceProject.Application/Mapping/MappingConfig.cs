@@ -10,7 +10,8 @@ namespace eCommerceProject.Application.Mapping
         {
             CreateMap<CreateCategory, Category>();
             CreateMap<CreateProduct, Product>();
-
+            CreateMap<UpdateCategory, Category>();
+            CreateMap<UpdateProduct, Product>();
             CreateMap<Category, GetCategory>();
             CreateMap<Product, GetProduct>();
         }

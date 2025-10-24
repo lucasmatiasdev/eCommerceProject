@@ -1,4 +1,5 @@
 ﻿using eCommerceProject.Application.DTOs.Product;
+using System.ComponentModel.DataAnnotations;
 
 namespace eCommerceProject.Application.DTOs.Category
 {
