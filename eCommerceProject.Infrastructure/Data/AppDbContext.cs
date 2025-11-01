@@ -1,13 +1,9 @@
 ﻿using eCommerceProject.Domain.Entities;
+using eCommerceProject.Domain.Entities.Cart;
 using eCommerceProject.Domain.Entities.Identity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace eCommerceProject.Infrastructure.Data
 {
@@ -20,6 +16,7 @@ namespace eCommerceProject.Infrastructure.Data
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<RefreshToken> RefreshTokens { get; set; }
+        public DbSet<PaymentMethod> PaymentMethods { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -38,6 +35,14 @@ namespace eCommerceProject.Infrastructure.Data
                         Id = Guid.NewGuid().ToString(),
                         Name = "User",
                         NormalizedName = "USER"
+                    }
+                );
+            builder.Entity<PaymentMethod>()
+                .HasData(
+                    new PaymentMethod
+                    {
+                        Id = Guid.NewGuid(),
+                        Name = "Credit Card",
                     }
                 );
         }
